@@ -46,6 +46,12 @@ rcl_ret_t
 _rclc_let_scheduling(rclc_executor_t * executor, rcl_wait_set_t * wait_set);
 */
 
+bool
+rcl_wait_set_is_valid(const rcl_wait_set_t * wait_set)
+{
+  return wait_set && wait_set->impl;
+}
+
 // rationale: user must create an executor with:
 // executor = rclc_executor_get_zero_initialized_executor();
 // then handles==NULL or not (e.g. properly initialized)

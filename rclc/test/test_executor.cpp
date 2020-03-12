@@ -55,6 +55,12 @@ static unsigned int _cb5_int_value = 0;
 rcl_publisher_t * _pub_int_ptr;
 std_msgs__msg__Int32 * _pub_int_msg_ptr;
 
+bool
+rcl_wait_set_is_valid(const rcl_wait_set_t * wait_set)
+{
+  return wait_set && wait_set->impl;
+}
+
 static
 void
 _results_callback_counters_init()
