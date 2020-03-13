@@ -21,6 +21,18 @@ Open a terminal with ROS 2 workspace. Assuming that the ROS 2 installation resid
 ~$ source /opt/ros/eloquent/setup.bash
 ```
 
+**Update**
+In my case cmake misses osrf_testing_tools_cpp. Due to that I built it from scratch:
+
+```C
+~$ git clone https://github.com/osrf/osrf_testing_tools_cpp.git
+~$ cd osrf_testing_tools_cpp
+~$ colcon build
+~$ source install/local_setup.bassh
+```
+
+
+
 **Step 2** Build the package
 Download and build the the packages `rclc` and `rclc_examples` in a workspace (for example `ros2_ws`). Then source the workspace:
 ```C
